@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Space</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Starfield Background -->
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="https://github.com/Tuli-Fisher" target="_blank" class="nav-link github-link">GitHub</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="section hero">
+            <div class="container">
+                <h1 class="hero-title">Welcome to My Portfolio</h1>
+                <p class="hero-subtitle">Exploring the Digital Cosmos</p>
+                <div class="hero-description">
+                    <p>A showcase of my work, skills, and creative journey through the vast expanse of technology.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Skills Section -->
+        <section id="about" class="section about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I am a passionate developer with a love for creating engaging and innovative digital experiences. My journey through the tech universe has equipped me with a diverse set of skills and a deep understanding of modern web development.</p>
+                        <p>I thrive on solving complex problems and bringing creative ideas to life through code. Every project is an opportunity to explore new horizons and push the boundaries of what's possible.</p>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">💻</div>
+                            <h3>Frontend Development</h3>
+                            <p>Creating beautiful, responsive user interfaces</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">⚙️</div>
+                            <h3>Backend Development</h3>
+                            <p>Building robust server-side applications</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">🎨</div>
+                            <h3>UI/UX Design</h3>
+                            <p>Designing intuitive user experiences</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">🚀</div>
+                            <h3>Full Stack</h3>
+                            <p>End-to-end development solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Project One</h3>
+                            <span class="project-badge">New</span>
+                        </div>
+                        <p class="project-description">An innovative web application showcasing modern design principles and advanced functionality.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">Source Code</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Project Two</h3>
+                            <span class="project-badge">Featured</span>
+                        </div>
+                        <p class="project-description">A full-stack solution with real-time capabilities and seamless user experience.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">Source Code</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Project Three</h3>
+                            <span class="project-badge">Popular</span>
+                        </div>
+                        <p class="project-description">An interactive dashboard with data visualization and analytics features.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Project</a>
+                            <a href="#" class="project-link">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="contact-intro">Have a project in mind? Let's create something amazing together.</p>
+                <div class="contact-button-container">
+                    <button id="contact-me-btn" class="contact-me-btn">Contact Me</button>
+                </div>
+                <form id="contact-form" class="contact-form" style="display: none;">
+                    <input type="hidden" name="access_key" value="7ddb64da-e766-40e4-a6a4-d9121457c1cd">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    <div id="form-status" class="form-status"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Portfolio. Exploring the digital cosmos.</p>
+            <div class="footer-links">
+                <a href="https://github.com/yourusername" target="_blank" class="footer-link">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
