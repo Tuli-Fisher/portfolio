@@ -220,6 +220,98 @@ body::before {
     color: var(--text-muted);
 }
 
+.tech-skills {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.tech-skills-title {
+    color: var(--space-accent);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.tech-skills-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.tech-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tech-icon img {
+    width: 64px;
+    height: 64px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.tech-icon:hover img {
+    transform: scale(1.15) translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Brand colors using CSS filters */
+.tech-icon img[alt="C#"] {
+    filter: brightness(0) saturate(100%) invert(27%) sepia(93%) saturate(1352%) hue-rotate(257deg) brightness(94%) contrast(85%);
+}
+
+.tech-icon img[alt="SQL"] {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(83%) saturate(1834%) hue-rotate(169deg) brightness(92%) contrast(88%);
+}
+
+.tech-icon img[alt="JavaScript"] {
+    filter: brightness(0) saturate(100%) invert(90%) sepia(86%) saturate(1352%) hue-rotate(354deg) brightness(103%) contrast(97%);
+}
+
+.tech-icon img[alt="HTML"] {
+    filter: brightness(0) saturate(100%) invert(44%) sepia(98%) saturate(2185%) hue-rotate(346deg) brightness(92%) contrast(91%);
+}
+
+.tech-icon img[alt="CSS"] {
+    filter: brightness(0) saturate(100%) invert(40%) sepia(99%) saturate(1639%) hue-rotate(187deg) brightness(91%) contrast(88%);
+}
+
+.tech-icon img[alt="React"] {
+    filter: brightness(0) saturate(100%) invert(78%) sepia(87%) saturate(3020%) hue-rotate(155deg) brightness(102%) contrast(95%);
+}
+
+.tech-icon img[alt="TypeScript"] {
+    filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(1932%) hue-rotate(195deg) brightness(95%) contrast(88%);
+}
+
+.tech-icon img[alt="Node.js"] {
+    filter: brightness(0) saturate(100%) invert(62%) sepia(98%) saturate(505%) hue-rotate(62deg) brightness(93%) contrast(89%);
+}
+
+.tech-icon span {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.tech-icon:hover span {
+    color: var(--space-accent);
+}
+
 /* Projects Section */
 .projects-grid {
     display: grid;

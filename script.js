@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
     
-    document.querySelectorAll('.skill-card, .project-card, .about-text').forEach(el => {
+    document.querySelectorAll('.skill-card, .project-card, .about-text, .tech-icon').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
