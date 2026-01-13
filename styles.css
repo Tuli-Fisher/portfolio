@@ -254,51 +254,73 @@ body::before {
     cursor: pointer;
 }
 
-.tech-icon img {
+.tech-icon .icon-box {
     width: 64px;
     height: 64px;
     padding: 12px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.tech-icon:hover img {
+.tech-icon .icon-box::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--brand-color, var(--text-muted));
+    -webkit-mask: var(--icon-url) no-repeat center / contain;
+    mask: var(--icon-url) no-repeat center / contain;
+    transition: background-color 0.3s ease;
+}
+
+.tech-icon:hover .icon-box {
     transform: scale(1.15) translateY(-5px);
     background: rgba(255, 255, 255, 0.15);
 }
 
-/* Brand colors using CSS filters */
-.tech-icon img[alt="C#"] {
-    filter: brightness(0) saturate(100%) invert(27%) sepia(93%) saturate(1352%) hue-rotate(257deg) brightness(94%) contrast(85%);
+/* Brand colors and icons */
+.csharp {
+    --brand-color: #512BD4;
+    --icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/csharp.svg');
 }
 
-.tech-icon img[alt="SQL"] {
-    filter: brightness(0) saturate(100%) invert(47%) sepia(83%) saturate(1834%) hue-rotate(169deg) brightness(92%) contrast(88%);
+.sql {
+    --brand-color: #4479A1;
+    --icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mysql.svg');
 }
 
-.tech-icon img[alt="JavaScript"] {
-    filter: brightness(0) saturate(100%) invert(90%) sepia(86%) saturate(1352%) hue-rotate(354deg) brightness(103%) contrast(97%);
+.javascript {
+    --brand-color: #F7DF1E;
+    --icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/javascript.svg');
 }
 
-.tech-icon img[alt="HTML"] {
-    filter: brightness(0) saturate(100%) invert(44%) sepia(98%) saturate(2185%) hue-rotate(346deg) brightness(92%) contrast(91%);
+.html {
+    --brand-color: #E34F26;
+    --icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/html5.svg');
 }
 
-.tech-icon img[alt="CSS"] {
-    filter: brightness(0) saturate(100%) invert(40%) sepia(99%) saturate(1639%) hue-rotate(187deg) brightness(91%) contrast(88%);
+.css {
+    --brand-color: #1572B6;
+    --icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/css3.svg');
 }
 
-.tech-icon img[alt="React"] {
-    filter: brightness(0) saturate(100%) invert(78%) sepia(87%) saturate(3020%) hue-rotate(155deg) brightness(102%) contrast(95%);
+.react {
+    --brand-color: #61DAFB;
+    --icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/react.svg');
 }
 
-.tech-icon img[alt="TypeScript"] {
-    filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(1932%) hue-rotate(195deg) brightness(95%) contrast(88%);
+.typescript {
+    --brand-color: #3178C6;
+    --icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/typescript.svg');
 }
 
-.tech-icon img[alt="Node.js"] {
-    filter: brightness(0) saturate(100%) invert(62%) sepia(98%) saturate(505%) hue-rotate(62deg) brightness(93%) contrast(89%);
+.nodejs {
+    --brand-color: #339933;
+    --icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/nodedotjs.svg');
 }
 
 .tech-icon span {
