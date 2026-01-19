@@ -1,5 +1,5 @@
-import { loadMoreInfo } from "./laoder";
-import { loadUsers } from "./laoder";
+import { loadMoreInfo } from "./laoder.js";
+import { loadUsers } from "./laoder.js";
 
 const usersContainer = document.querySelector(".users-container");
 const postsContainer = document.querySelector(".posts-container");
