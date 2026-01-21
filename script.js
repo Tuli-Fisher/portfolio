@@ -5,7 +5,7 @@ function createStars() {
         { el: document.getElementById('stars2'), count: 100, size: 1.5 },
         { el: document.getElementById('stars3'), count: 50, size: 2 }
     ];
-    
+
     containers.forEach(({ el, count, size }) => {
         const fragment = document.createDocumentFragment();
         for (let i = 0; i < count; i++) {
@@ -37,7 +37,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(anchor.getAttribute('href'));
         if (target) {
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            
+
             // Auto-show form when clicking contact link
             if (anchor.getAttribute('href') === '#contact') {
                 setTimeout(() => {
@@ -55,8 +55,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Navigation scroll shadow effect
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
-    nav.style.boxShadow = window.pageYOffset > 100 
-        ? '0 5px 20px rgba(0, 212, 255, 0.2)' 
+    nav.style.boxShadow = window.pageYOffset > 100
+        ? '0 5px 20px rgba(0, 212, 255, 0.2)'
         : 'none';
 });
 
@@ -64,48 +64,48 @@ window.addEventListener('scroll', () => {
 document.addEventListener('DOMContentLoaded', () => {
     // Create starfield
     createStars();
-    
+
     // Setup contact form
     const contactMeBtn = document.getElementById('contact-me-btn');
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
-    
+
     if (contactMeBtn && contactForm) {
         // Toggle form visibility
         contactMeBtn.addEventListener('click', () => {
             const isHidden = contactForm.style.display === 'none';
             contactForm.style.display = isHidden ? 'block' : 'none';
-            
+
             if (isHidden) {
                 contactForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 setTimeout(() => document.getElementById('name').focus(), 300);
             }
         });
-        
+
         // Form submission
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             const submitBtn = contactForm.querySelector('.submit-btn');
             const originalText = submitBtn.textContent;
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
             formStatus.className = 'form-status';
             formStatus.textContent = '';
-            
+
             try {
                 const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     body: new FormData(contactForm)
                 });
-                
+
                 const data = await response.json();
-                
+
                 if (response.ok && data.success) {
                     formStatus.textContent = 'Message sent successfully! I\'ll get back to you soon.';
                     formStatus.className = 'form-status success';
                     contactForm.reset();
-                    
+
                     setTimeout(() => {
                         contactForm.style.display = 'none';
                         formStatus.className = 'form-status';
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
+
     // Fade-in animation on scroll
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -133,12 +133,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
-    
+
     document.querySelectorAll('.skill-card, .project-card, .about-text, .tech-icon').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
+    });
+
+    // Project card expansion
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Don't trigger if clicking a link or button inside the card
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
+
+            card.classList.toggle('expanded');
+        });
     });
 });
 
